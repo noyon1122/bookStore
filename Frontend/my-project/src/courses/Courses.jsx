@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
-import Footer from '../components/footer'
+import Footer from '../components/Footer'
 import Course from '../components/Course'
 
 function Courses() {
@@ -12,7 +12,7 @@ function Courses() {
   </div>
    <Footer/>
    </>
-  )
+  );
 }
 
-export default Courses
+export default Courses;

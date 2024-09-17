@@ -1,9 +1,22 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Cards from './Cards'
-import list from '../../public/list.json';
+import axios from 'axios';
 import {Link} from "react-router-dom";
 
 function Course() {
+    const [book,setBook]=useState([])
+    useEffect(()=>{
+        const getBook=async()=>{
+      try{
+       const res= await axios.get('http://localhost:4001/book');
+       console.log(res.data);
+       setBook(res.data);
+      } catch(error){
+        console.log(error);
+      }
+    }
+    getBook();
+    },[])
   return (
    <>
    <div className='max-w-screen-2xl container mx-auto md:px-20 px-4'>
@@ -11,12 +24,13 @@ function Course() {
         <h1 className='text-2xl  md:text-4xl'>
             We're delihted to have you <span className='text-pink-500'>Here! :)</span>
         </h1>
-        <p className='mt-12'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus consectetur voluptates, iusto reprehenderit atque ipsa aspernatur dicta, accusamus at, quia nisi id nihil. Nihil aspernatur maxime, nam esse temporibus facere maiores commodi, pariatur voluptatum odio optio, reprehenderit aliquid eaque corporis.</p>
+        <p className='mt-12'>The Reading Book is a comprehensive guide to teaching reading. It contains research-based information that will support primary and middle school teachers to plan realistic and effective programmes that engage learners.
+          The Reading Book outlines the teaching approaches used in effective reading instruction in a clear, teacher-friendly way.</p>
        <Link to="/"> <button className='mt-6 bg-pink-500 text-white px-4 py-2 rounded-md hover:bg-pink-700 duration-300'>Back</button></Link>
     </div>
     <div className='mt-12 grid grid-cols-1 md:grid-cols-3'>
         {
-            list.map((item)=>(
+            book.map((item)=>(
                 <Cards key={item.id} item={item}/>
             ))
         }
