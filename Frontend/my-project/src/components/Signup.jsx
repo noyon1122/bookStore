@@ -27,7 +27,7 @@ function Signup() {
       console.log(res.data);
       if(res.data)
       {
-        toast.success('Signup Successfully!');
+        toast.success('Signup Successfully!!');
         navigate(from, {replace:true});
         
       }
@@ -35,7 +35,7 @@ function Signup() {
     }).catch((err)=>{
       if(err.response){
         console.log(err)
-        toast.error("Error" + err.response.data.message);
+        toast.error("Error : " + err.response.data.message);
       }
       
     });
@@ -54,21 +54,21 @@ function Signup() {
     {/* Name */}
     <div className='mt-4 space-y-2'>
     <span>Name</span><br />
-    <input type="text" placeholder='Enter your name' className='w-80 px-3 border rounded-md outline-none' 
+    <input type="text" placeholder='Enter your name..' className='w-80 px-3 border rounded-md outline-none' 
     {...register("fullname", { required: true })} /> <br />
     {errors.fullname && (<span className='text-sm text-red-500'>This field is required</span>)}
    </div>
     {/* Email */}
    <div className='mt-4 space-y-2'>
     <span>Email</span><br />
-    <input type="email" placeholder='Enter your email' className='w-89 px-3 border rounded-md outline-none' 
+    <input type="email" placeholder='Enter your email..' className='w-89 px-3 border rounded-md outline-none' 
      {...register("email", { required: true })} /> <br />
              {errors.email && (<span className='text-sm text-red-500'>This field is required</span>)}
    </div>
    {/* Password */}
    <div className='mt-4 space-y-2'>
     <span>Password</span><br />
-    <input type="password" placeholder='Enter your password' className='w-89 px-3 border rounded-md outline-none' 
+    <input type="password" placeholder='Enter your password..' className='w-89 px-3 border rounded-md outline-none' 
      {...register("password", { required: true })} /> <br />
              {errors.password && (<span className='text-sm text-red-500'>This field is required</span>)}
    </div>
