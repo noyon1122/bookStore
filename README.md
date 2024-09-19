@@ -17,4 +17,6 @@
 ![Capture4](https://github.com/user-attachments/assets/89f85879-c5dc-4c17-8d9f-52d179d769ba)
 ![Capture5](https://github.com/user-attachments/assets/2303133d-7394-4cdf-87fd-8be9a324c7e3)
 
+## Dark Mode
+![Dark](https://github.com/user-attachments/assets/f50270ed-f058-4481-968c-c6248ed588f1)
 
