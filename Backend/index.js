@@ -5,7 +5,13 @@ import cors from 'cors';
 import bookRoute from './route/book.route.js'
 import userRoute from './route/user.route.js'
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin:[
+    'bookstore-fd0b1.web.app',
+    'bookstore-fd0b1.firebaseapp.com'
+  ],
+  credentials:true
+}));
 app.use(express.json());
 dotenv.config();
 const PORT =process.env.PORT || 4000;
